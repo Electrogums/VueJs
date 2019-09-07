@@ -5,6 +5,9 @@
 <script src="components/computed-properties.js"></script>
 <script src="components/methods.js"></script>
 <script src="components/vmodel.js"></script>
+<script src="components/vmodel-checkboxes.js"></script>
+<script src="components/emit.js"></script>
+<script src="components/parent-data.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -20,12 +23,25 @@
         <computed-properties></computed-properties>
         <methods></methods>
         <vmodel></vmodel>
+        <vmodel-checkboxes></vmodel-checkboxes>
+        <emit @carbrand="showCarBrandFromEmitCmp"></emit>
+        <parten-data></parten-data>
     </div>
 
 </body>
 <script>
     new Vue({
         el: '#app',
+        data(){
+            return{
+                appName:"inciando con Vue js"
+            };
+        },
+        methods: {
+            showCarBrandFromEmitCmp(carBrand){
+                alert(carBrand);
+            }
+        },
 
     })
 </script>
